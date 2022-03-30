@@ -148,7 +148,7 @@
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_virgula"
             style="@style/Numbers_Button"
-            android:text="," />
+            android:text="." />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_zero"
@@ -161,7 +161,10 @@
             style="@style/Numbers_Button"
             android:adjustViewBounds="true"
             android:scaleType="fitCenter"
+            android:scaleX="0.3"
+            android:scaleY="0.3"
             android:src="@drawable/backspace" />
+
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/bt_resultado"

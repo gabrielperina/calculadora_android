@@ -75,18 +75,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             @Override
             public void onClick(View view) {
 
-                try {
+                try{
                     Expression expressao = new ExpressionBuilder(txtviewExpressao.getText().toString()).build();
                     double resultado = expressao.evaluate();
                     long longresult = (long) resultado;
+                    System.out.println("botaoclicado");
+                    txtviewResultado.append(String.valueOf(longresult));
 
-                    if (resultado == (double)longresult){
+                    /*if(resultado == (double)longresult){
                         bt_resultado.setText((CharSequence) String.valueOf(longresult));
                     }else{
                         bt_resultado.setText((CharSequence) String.valueOf(resultado));
                     }
-                } catch (Exception e){
 
+                     */
+                } catch (Exception e){
+                        e.printStackTrace();
                 }
             }
         });
@@ -125,7 +129,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             txtviewResultado.setText(" ");
             txtviewExpressao.append(string);
         }else{
-            txtviewExpressao.append(txtviewExpressao.getText());
+            //txtviewExpressao.append(txtviewExpressao.getText());
             txtviewExpressao.append(string);
             txtviewResultado.setText(" ");
 
@@ -176,7 +180,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 break;
 
             case R.id.bt_virgula:
-                AcrescentarUmaExpressao( ",", false);
+                AcrescentarUmaExpressao( ".", false);
                 break;
 
             case R.id.bt_adicao:
